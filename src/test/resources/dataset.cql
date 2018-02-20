@@ -18,7 +18,7 @@ CREATE TABLE car (
 
 CREATE INDEX on car(year);
 
--- Sample Data
+-- Sample Data 10 Cars
 INSERT INTO car (car_id, year, make, model, price)
 VALUES (8557f426-1cc9-41bf-a581-fadb101cd289, 2011, 'BMW', '335D', 29450.00);
 
@@ -45,3 +45,6 @@ VALUES (63e60e7d-590c-4a11-a4e3-c1934a6ad60c, 2015, 'Lexus', 'IS350', 28456.00);
 
 INSERT INTO car (car_id, year, make, model, price)
 VALUES (b0c482c1-68bc-4b4a-b771-298b54c592c6, 2012, 'Nissan', '370Z', 18460.00);
+
+INSERT INTO car (car_id, year, make, model, price)
+VALUES (c0c482c1-68bc-4b4a-b771-298b54c592c6, 2009, 'Dodge', 'Viper', 36570.00);

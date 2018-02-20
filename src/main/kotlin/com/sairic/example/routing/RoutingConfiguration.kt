@@ -1,6 +1,7 @@
 package com.sairic.example.routing
 
 import com.sairic.example.repository.CarRepository
+import org.springframework.beans.factory.annotation.Autowired
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -16,8 +17,11 @@ import java.net.URI
 @Configuration
 class RoutingConfiguration {
 
+    @Autowired
+    lateinit var carRepository: CarRepository
+
     @Bean
-    fun routerFunction(carRepository: CarRepository): RouterFunction<ServerResponse> = router {
+    fun routerFunction(): RouterFunction<ServerResponse> = router {
         ("/car/api").nest {
             GET("/") { ok().body(carRepository.findAll())
             }
