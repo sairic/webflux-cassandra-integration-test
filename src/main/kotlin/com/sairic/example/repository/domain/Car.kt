@@ -8,8 +8,8 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn
 import java.util.UUID
 
-data class Car(@PrimaryKeyColumn(name = "car_id", type = PrimaryKeyType.PARTITIONED)
-               @CassandraType(type = DataType.Name.UUID) val carId: UUID?,
+data class Car(@PrimaryKeyColumn(name = "car_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+               @CassandraType(type = DataType.Name.UUID) val id: UUID? = UUID.randomUUID(),
                val year: Int,
                val make: String,
                val model: String,
